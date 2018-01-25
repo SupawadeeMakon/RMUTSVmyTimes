@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "738861150536",
+    "firebase_url": "https://supawadeenodemcu.firebaseio.com",
+    "project_id": "supawadeenodemcu",
+    "storage_bucket": "supawadeenodemcu.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:738861150536:android:4a266b785f22eb72",
+        "android_client_info": {
+          "package_name": "piw.rmutsv.ac.th.rmutsvmytimes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "738861150536-h3p46lhpkf8i8a3olv3gfrpecfdotbno.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "piw.rmutsv.ac.th.rmutsvmytimes",
+            "certificate_hash": "6eb7e760357de307a64dc9cce104e2d7b426d38a"
+          }
+        },
+        {
+          "client_id": "738861150536-3rctku600c2toi1qsvl8cmta0vcsg1ep.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvlDspB-N4ZKLDIhfmoYhU1OhMF09OStI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "738861150536-3rctku600c2toi1qsvl8cmta0vcsg1ep.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
