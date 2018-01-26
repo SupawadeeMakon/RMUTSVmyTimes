@@ -1,12 +1,15 @@
 package piw.rmutsv.ac.th.rmutsvmytimes.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -16,6 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Map;
 
+import piw.rmutsv.ac.th.rmutsvmytimes.GraphActivity;
 import piw.rmutsv.ac.th.rmutsvmytimes.R;
 
 /**
@@ -29,7 +33,7 @@ public class Mainfragment extends Fragment {
     private DatabaseReference databaseReference;
     private FirebaseDatabase firebaseDatabase;
     private String myTimesString;
-
+    private Button button;
 
     @Override
 
@@ -59,6 +63,20 @@ public class Mainfragment extends Fragment {
 
             }
         });//
+
+//        Graph Controller
+
+        button = getView().findViewById(R.id.btnShowGraph);//ผูกกับตัวแปร
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getActivity(),"Show Graph",Toast.LENGTH_LONG).show();
+
+                Intent intent = new Intent(getActivity(), GraphActivity.class);//เคลื่อนย้ายไปยังอีกหน้า หน้า GraphActivity
+                startActivity(intent);
+            }
+        });
+
 
     }//Main Method
 
