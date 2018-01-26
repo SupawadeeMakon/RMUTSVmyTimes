@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,9 +19,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.Map;
+import java.util.Random;
 
 import piw.rmutsv.ac.th.rmutsvmytimes.GraphActivity;
 import piw.rmutsv.ac.th.rmutsvmytimes.R;
+import piw.rmutsv.ac.th.rmutsvmytimes.utility.PostData;
 
 /**
  * Created by macbookpro on 1/25/2018 AD.
@@ -55,6 +58,32 @@ public class Mainfragment extends Fragment {
                 myTimesString = String.valueOf(map.get("myTimes"));//เปลี่ยนค่าที่รับมาเป็น String
                 textView.setText(myTimesString);
 
+//                Get and Post Data Form Firebase to MySQL
+                try {
+
+                    String strURL = "http://androidthai.in.th/piw/addGraphPiw.php";
+                    Random random = new Random();
+                    int intX = Integer.parseInt(myTimesString);//เปลี่ยนอักษรให้เป็นจำนวน
+                    int intY = random.nextInt(10) + intX;
+
+                    PostData postData = new PostData(getActivity());
+                    postData.execute(
+                            Integer.toString(intX),
+                            Integer.toString(intY),
+                            strURL);
+                    String strResult = postData.get();
+                    Log.d("26Jan", "Result ==>" + strResult);
+
+
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+
+                }
+
+
+
+
 
             }//onDataChange
 
@@ -62,7 +91,7 @@ public class Mainfragment extends Fragment {
             public void onCancelled(DatabaseError databaseError) {
 
             }
-        });//
+        });
 
 //        Graph Controller
 
